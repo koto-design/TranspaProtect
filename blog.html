@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog - <span class="transpa-name">Transpa Protect</span></title>
+  <link rel="stylesheet" href="theme.css">
+
+  <style>
+    /* ===== FUNDAL TRANSLUCID CA ÎN SCREENSHOT ===== */
+    body {
+      background: url("img/fundal-blog.jpg") center/cover fixed no-repeat;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255, 255, 255, 0.82); /* strat alb translucid */
+      backdrop-filter: blur(4px);
+      z-index: -1;
+    }
+
+    /* ===== SECȚIUNE BLOG ===== */
+    .blog-section {
+      padding: 8rem 2rem 5rem 2rem;
+      line-height: 1.8;
+      color: #1a1a1a;
+      max-width: 1000px;
+      margin: 0 auto;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .blog-section h1, 
+    .blog-section h2, 
+    .blog-section h3 {
+      color: var(--brand-blue);
+      font-family: "The Seasons", serif;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .blog-section h1 {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+
+    .blog-section h2 {
+      font-size: 1.8rem;
+      margin-top: 3rem;
+    }
+
+    .blog-section h3 {
+      font-size: 1.4rem;
+      color: var(--brand-blue);
+    }
+
+    .subsection {
+      margin-left: 2rem;
+      border-left: 3px solid rgba(0,0,0,0.05);
+      padding-left: 1.5rem;
+    }
+
+    .blog-section p {
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+
+    .blog-section ol {
+      margin-left: 2rem;
+    }
+
+    blockquote {
+      background: rgba(240,240,240,0.7);
+      border-left: 4px solid var(--brand-red);
+      padding: 1rem 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: #333;
+    }
+
+    /* ===== CONTACT LA FINAL ===== */
+    .contact-blog {
+      background: transparent;
+      color: var(--text-dark);
+      padding: 5rem 2rem;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    .contact-blog h2 {
+      color: var(--brand-blue);
+      font-family: "The Seasons", serif;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-blog p, 
+    .contact-blog a {
+      color: var(--text-dark);
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+
+    .contact-blog a:hover {
+      color: var(--brand-red);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .blog-section { padding: 6rem 1.5rem; }
+      .blog-section h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header>
+    <nav class="container-fluid">
+      <div class="nav-left">
+        <a href="index.html"><img src="img/logo.png" alt="Transpa Protect" class="logo"></a>
+      </div>
+      <div class="nav-right">
+        <ul>
+          <li><a href="index.html#acasa">Acasă</a></li>
+          <li><a href="index.html#despre">Despre Noi</a></li>
+          <li><a href="index.html#servicii">Servicii</a></li>
+          <li><a href="index.html#portofoliu">Portofoliu</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CONȚINUT BLOG -->
+  <section class="blog-section">
+    <div class="container">
+
+      <h1><span class="transpa-name">Transpa Protect</span> ofera Soluții Complete pentru Închiderea Teraselor și Spații Exterioare</h1>
+      <p>La Transpa Protect, înțelegem importanța creării unui spațiu exterior care să îmbine perfect funcționalitatea, estetica și confortul. Fie că dorești să îți transformi terasa într-o oază protejată pe tot parcursul anului, să adaugi o notă de eleganță cu o copertină modernă sau să te bucuri de controlul absolut al climei cu o pergolă bioclimatică, suntem partenerul tău de încredere. Descoperă soluțiile noastre inovatoare, adaptate stilului tău de viață și nevoilor spațiului tău.
+</p>
+
+      <h2>Soluțiile Noastre: Confort și Eleganță pentru Spațiul Tău Exterior</h2>
+      <p><!-- textul de introducere pentru această secțiune --></p>
+
+      <div class="subsection">
+        <h3>Închideri Terase cu Folie PVC Transparentă</h3>
+        <p>Soluțiile noastre de închidere cu folie PVC transparentă transformă terasele deschise în spații utilizabile pe tot parcursul anului. Oferind o protecție excelentă împotriva vântului, ploii și a temperaturilor scăzute, folia PVC de calitate superioară permite în același timp o vizibilitate clară către exterior, păstrând luminozitatea naturală. Este soluția ideală pentru restaurante, cafenele sau pentru a extinde spațiul de locuit al casei tale.
+</p>
+
+        <h3>Copertine Personalizate: Umbră și Protecție cu Stil</h3>
+        <p>De la copertine retractabile, perfecte pentru a oferi umbră în zilele însorite și a se retrage discret atunci când nu sunt necesare, la copertine fixe, robuste și elegante, gama Transpa Protect se adaptează oricărui design. Materialele de înaltă calitate asigură durabilitate și rezistență la intemperii, transformând orice balcon, terasă sau fereastră într-un spațiu mai confortabil și mai estetic.
+</p>
+
+        <h3>Pergole Bioclimatice: Control Total al Mediului Exterior</h3>
+        <p>Pergolele bioclimatice reprezintă vârful inovației în amenajarea spațiilor exterioare. Cu lamele orientabile, controlabile electric, îți permit să reglezi exact cantitatea de lumină și aerisire, oferind protecție solară, adăpost de ploaie și un flux optim de aer. Sunt soluția perfectă pentru a crea un mediu exterior personalizat, ideal pentru relaxare sau evenimente, indiferent de condițiile meteo.
+</p>
+      </div>
+
+      <h2>Povestea Noastră: Pasiune pentru Spații Exterioare Perfecte</h2>
+      <p>Transpa Protect s-a născut din dorința de a oferi soluții superioare și durabile pentru amenajarea spațiilor exterioare. De la început, ne-am angajat să combinăm inovația tehnologică cu un design elegant și o execuție impecabilă. Fiecare proiect este tratat cu maximă atenție, transformând viziunile clienților noștri în realitate, cu produse care rezistă testului timpului și adaugă valoare proprietăților.
+</p>
+
+      <h2>Transformări Reușite: Studii de Caz Inspiraționale</h2>
+      <p>De-a lungul anilor, am avut privilegiul de a lucra la numeroase proiecte, de la terase rezidențiale intime la spații exterioare comerciale de anvergură. Portofoliul nostru include exemple variate de transformări spectaculoase, demonstrând versatilitatea și calitatea soluțiilor Transpa Protect. Clienții noștri se bucură acum de spații exterioare funcționale, elegante și adaptate nevoilor lor specifice.
+</p>
+
+      <h2>De la Idee la Realitate: Procesul Nostru Simplu și Eficient</h2>
+      <ol>
+        <li>Consultanță și Planificare: Echipa noastră te va ghida prin toate opțiunile, ajutându-te să alegi soluția perfectă pentru spațiul și bugetul tău.
+</li>
+        <li>Proiectare Personalizată: Creăm un design detaliat, adaptat specificului locației tale, asigurându-ne că fiecare aspect estetic și funcțional este îndeplinit.
+</li>
+        <li>Producție și Pregătire: Utilizăm materiale de cea mai înaltă calitate și tehnologii moderne pentru a produce componentele soluției tale.
+</li>
+        <li>Instalare Profesională: Echipele noastre specializate asigură o instalare rapidă, eficientă și de cea mai bună calitate, cu atenție la detalii.
+</li>
+      </ol>
+
+      <h2>Ce Spun Clienții Noștri: Experiențe Reale, Recomandări Sincere</h2>
+      <blockquote>Am fost impresionat de profesionalismul Transpa Protect. Terasa mea este acum un spațiu minunat, utilizabil tot anul. Recomand cu drag!"</blockquote>
+          <p>— Ana Maria, proprietar de locuință</p>
+          <blockquote>"Pergola bioclimatică instalată de Transpa Protect a transformat complet zona de relaxare a restaurantului nostru. Clienții o adoră!"</blockquote>
+          <p>— Mihai Popescu, manager restaurant</p>
+
+      <h2>Întrebări Frecvente (FAQ)</h2>
+      <div class="faq">
+        <h3>În cât timp se instalează o lucrare?</h3>
+        <p>Durata variază în funcție de complexitatea proiectului, dar majoritatea instalărilor se realizează în 1-3 zile lucrătoare.</p>
+
+        <h3>Cât durează procesul de fabricare? </h3>
+        <p>Durata procesului de fabricare este între 7 și 30 de zile, în funcție de complexitatea sistemului și a proiectului.</p>
+
+        <h3>Materialele utilizate sunt rezistente la condiții meteo extreme? </h3>
+        <p>Da, folosim doar materiale premium, testate și certificate pentru a rezista vântului puternic, ploilor abundente și temperaturilor extreme.</p>
+       
+        <h3>Se pot personaliza materialele și culorile?</h3>
+        <p>Absolut! Oferim o gamă largă de culori, texturi și opțiuni de personalizare pentru a ne asigura că produsul final se potrivește perfect stilului tău.</p>
+
+        <h3>Oferiți garanție pentru produsele și serviciile voastre?</h3>
+        <p>Da, toate produsele și serviciile noastre beneficiază de garanție conform standardelor legale și interne ale companiei.</p>
+        
+        <h3>Lucrați în toată țara?</h3>
+        <p>Da, lucrăm în toată țara! Pentru proiectele din afara zonei noastre, se aplică un cost suplimentar de transport, calculat în funcție de numărul de kilometri parcurși. De asemenea, în anumite cazuri, putem trimite produsele și prin curier.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-blog">
+    <div class="container">
+      <h2>Contactați-ne</h2>
+      <p>Ești gata să îți transformi spațiul exterior? Contactează echipa Transpa Protect astăzi pentru o consultație gratuită și o ofertă personalizată. Suntem aici pentru a-ți răspunde la întrebări și a te ghida spre soluția ideală.</p>
+      <p><strong>📞 Telefon:</strong> <a href="tel:+40738476638">+40 738 476 638</a></p>
+      <p><strong>📧 Email:</strong> <a href="mailto:transpaprotect@gmail.com">transpaprotect@gmail.com</a></p>
+      <p><strong>💬 WhatsApp:</strong> <a href="https://wa.me/40738476638" target="_blank">Trimite mesaj</a></p>
+      <p><strong>🌐 Facebook:</strong> <a href="https://www.facebook.com/transpaprotect" target="_blank">Transpa Protect</a></p>
+      <p><strong>🌐 Instagram:</strong> <a href="#">@transpaprotect</a></p>
+      <p>Suntem nerăbdători să colaborăm și să-ți transformăm spațiul exterior într-un loc de vis!</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <small>© 2025 Transpa Protect • 
+        <a href="https://www.facebook.com/transpaprotect" target="_blank">Facebook</a> • 
+        <a href="tel:+40738476638">+40 738 476 638</a>
+      </small>
+    </div>
+  </footer>
+</body>
+</html>
