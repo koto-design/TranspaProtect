@@ -101,8 +101,8 @@
         </p>
         <ul>
           <li><a href="#terasa" class="scroll-link">Capse și bride – adaptabile la orice spațiu</a></li>
-          <li><a href="#terasa" class="scroll-link">Rulouri cu manivelă</a></li>
-          <li><a href="#terasa" class="scroll-link">Rulouri încasetate manuale sau electrice</a></li>
+          <li><a href="#rulouri-manivela" class="scroll-link">Rulouri cu manivelă</a></li>
+          <li><a href="#rulouri-incasetate" class="scroll-link">Rulouri încasetate manuale sau electrice</a></li>
         </ul>
       </div>
 
@@ -144,34 +144,34 @@
     <h3>Lucrări realizate de echipa noastră</h3>
 <div class="portfolio-grid">
 
-  <figure id="terasa">
+  <figure id="terasa" class="gallery-item">
     <img src="img/terasa.jpg" alt="Închidere terasă folie PVC">
     <figcaption>Terase închise cu folie cristal PVC</figcaption>
   </figure>
 
-  <figure id="foisor">
+  <figure id="foisor" class="gallery-item">
     <img src="img/foisor.jpg" alt="Foișor protejat cu folie cristal">
     <figcaption>Foișoare protejate cu folie cristal PVC</figcaption>
   </figure>
 
-  <figure id="copertina">
+  <figure id="copertina" class="gallery-item">
     <img src="img/copertina.jpg" alt="Copertină retractabilă">
     <figcaption>Copertine moderne</figcaption>
   </figure>
 
-  <figure id="pergola">
+  <figure id="pergola" class="gallery-item">
     <img src="img/pergola.jpg" alt="Pergolă bioclimatică">
     <figcaption>Pergole elegante și durabile</figcaption>
   </figure>
 
   <!-- 🆕 Rulouri cu manivelă -->
-  <figure id="rulouri-manivela">
+  <figure id="rulouri-manivela" class="gallery-item">
     <img src="img/rulouri-manivela.jpg" alt="Rulouri cu manivelă">
     <figcaption>Rulouri cu manivelă</figcaption>
   </figure>
 
   <!-- 🆕 Rulouri încasetate -->
-  <figure id="rulouri-incasetate">
+  <figure id="rulouri-incasetate" class="gallery-item">
     <img src="img/rulouri-incasetate.jpg" alt="Rulouri încasetate">
     <figcaption>Rulouri încasetate</figcaption>
   </figure>
@@ -275,6 +275,96 @@ document.querySelectorAll('.scroll-link').forEach(link => {
   });
 });
 </script>
+
+<!-- GALERIE IMAGINI (LIGHTBOX) -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <div class="nav prev">&#10094;</div>
+  <img class="lightbox-image" src="" alt="">
+  <div class="nav next">&#10095;</div>
+  <div class="lightbox-caption"></div>
+</div>
+
+<script>
+// ====== DEFINIM GALERIILE ======
+const galleries = {
+  'terasa': ['img/terasa1.jpg','img/terasa2.jpg','img/terasa3.jpg'],
+  'foisor': ['img/foisor1.jpg','img/foisor2.jpg','img/foisor3.jpg'],
+  'copertina': ['img/copertina1.jpg','img/copertina2.jpg','img/copertina3.mp4'], // poți adăuga .mp4
+  'pergola': ['img/pergola1.jpg','img/pergola2.jpg'],
+  'rulouri-manivela': ['img/rulouri-manivela1.jpg','img/rulouri-manivela2.jpg'],
+  'rulouri-incasetate': ['img/rulouri-incasetate1.jpg','img/rulouri-incasetate2.jpg'] 
+};
+
+const figures = document.querySelectorAll('.portfolio-grid figure');
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = lightbox.querySelector('.lightbox-image');
+const lightboxVideo = lightbox.querySelector('.lightbox-video');
+const caption = lightbox.querySelector('.lightbox-caption');
+
+let currentGallery = [];
+let currentIndex = 0;
+
+// ===== DESCHIDERE LIGHTBOX =====
+figures.forEach(fig => {
+  fig.addEventListener('click', () => {
+    const id = fig.id;
+    currentGallery = galleries[id];
+    if (!currentGallery) return;
+    currentIndex = 0;
+    openMedia(currentGallery[currentIndex], fig.querySelector('figcaption').innerText);
+  });
+
+  // cursor pointer pe hover
+  fig.style.cursor = 'pointer';
+});
+
+function openMedia(src, text) {
+  lightbox.style.display = 'flex';
+  caption.innerText = text;
+
+  if (src.endsWith('.mp4')) {
+    lightboxVideo.src = src;
+    lightboxVideo.style.display = 'block';
+    lightboxImage.style.display = 'none';
+  } else {
+    lightboxImage.src = src;
+    lightboxImage.style.display = 'block';
+    lightboxVideo.style.display = 'none';
+  }
+}
+
+// ===== NAVIGARE =====
+document.querySelector('.next').onclick = () => navigate(1);
+document.querySelector('.prev').onclick = () => navigate(-1);
+
+function navigate(dir) {
+  if (!currentGallery.length) return;
+  currentIndex = (currentIndex + dir + currentGallery.length) % currentGallery.length;
+  openMedia(currentGallery[currentIndex], caption.innerText);
+}
+
+// ===== ÎNCHIDERE =====
+document.querySelector('.close').onclick = () => closeLightbox();
+lightbox.addEventListener('click', e => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+function closeLightbox() {
+  lightbox.style.display = 'none';
+  lightboxVideo.pause();
+  lightboxVideo.src = '';
+}
+</script>
+
+<div id="galleryModal" class="gallery-modal">
+  <div class="gallery-content">
+    <span class="close-gallery">&times;</span>
+    <div id="galleryImages"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
