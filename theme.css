@@ -976,6 +976,121 @@ html {
   transition: transform 0.3s ease;
 }
 
+/* ======== NAVIGAȚIE GENERAL ======== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 25px;
+  background: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo {
+  height: auto;
+  width: 400px; /* sau cât vrei tu — 180–200px arată bine */
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 300px; /* puțin mai mic pe mobil, dar tot clar vizibil */
+  }
+}
+
+/* ======== MENIU DESKTOP ======== */
+.nav-right ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-right ul li a {
+  text-decoration: none;
+  color: #001d4a;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-right ul li a:hover {
+  color: #8b0000;
+}
+
+/* ======== BUTON MENIU MOBIL ======== */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: #001d4a;
+  cursor: pointer;
+}
+
+/* ======== STIL MOBIL ======== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+ .nav-right ul {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 80px;
+  right: 78px; /* îl aliniază frumos la dreapta */
+  width: 25%; /* îl face puțin mai îngust */
+  background: rgba(255, 255, 255, 0.95); /* alb ușor transparent */
+  border-radius: 20px; /* colțuri rotunjite complet */
+  padding: 25px 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid #f0f0f0;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+
+  .nav-right ul.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-right ul li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .nav-right ul li a {
+    color: #001d4a;
+    font-weight: 600;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    transition: 0.2s ease;
+  }
+
+  .nav-right ul li a:hover {
+    color: #8b0000;
+    background: rgba(139, 0, 0, 0.05);
+  }
+}
+
+/* ======== ANIMAȚIE DESCHIDERE ======== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
 
 
 

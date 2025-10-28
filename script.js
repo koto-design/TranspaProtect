@@ -7,16 +7,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const galleryData = {
     terasa: [
       ...Array.from({ length: 12 }, (_, i) => `img/terasa/${i + 1}.jpg`),
-      "img/terasa/video1.mp4"
+      "img/terasa/video1.mp4",
+      ...Array.from({ length: 46 }, (_, i) => `img/terasa/${i + 13}.jpg`)
     ],
     foisor: [
-      ...Array.from({ length: 12 }, (_, i) => `img/foisor/${i + 1}.jpg`)
+      ...Array.from({ length: 15 }, (_, i) => `img/foisor/${i + 1}.jpg`)
     ],
     copertina: [
-      ...Array.from({ length: 12 }, (_, i) => `img/copertina/${i + 1}.jpg`)
+      ...Array.from({ length: 13 }, (_, i) => `img/copertina/${i + 1}.jpg`)
     ],
     pergola: [
-      ...Array.from({ length: 12 }, (_, i) => `img/pergola/${i + 1}.jpg`)
+      ...Array.from({ length: 12 }, (_, i) => `img/pergola/${i + 1}.jpg`),
+      "img/pergola/video1.mp4",
+      "img/pergola/video2.mp4"
     ],
     "rulouri-manivela": [
       ...Array.from({ length: 12 }, (_, i) => `img/rulouri-manivela/${i + 1}.jpg`)
@@ -261,5 +264,77 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 400);
     }
   }, { capture: true });
+});
+
+const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.nav-right ul');
+
+// Deschidere / închidere la click pe iconiță
+menuToggle.addEventListener('click', (e) => {
+  e.stopPropagation(); // previne închiderea imediată
+  menu.classList.toggle('active');
+});
+
+// Închidere când dai click pe un link din meniu
+menu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    menu.classList.remove('active');
+  });
+});
+
+// Închidere când dai click în afara meniului
+document.addEventListener('click', (e) => {
+  if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+    menu.classList.remove('active');
+  }
+});
+
+// ===== ÎNCHIDERE AUTOMATĂ A GALERIEI CÂND DAI CLICK ÎN AFARA CONȚINUTULUI =====
+document.addEventListener('click', function(e) {
+  const modal = document.querySelector('.gallery-modal');
+  if (!modal || !modal.classList.contains('active')) return;
+
+  const content = modal.querySelector('.gallery-content');
+  const video = modal.querySelector('#currentVideo');
+
+  // Dacă s-a dat click în afara conținutului și nu pe butoane
+  if (!content.contains(e.target) && !e.target.closest('.nav') && !e.target.closest('.close-gallery')) {
+    modal.classList.remove('active');
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
+    }
+  }
+});
+// ===== ÎNCHIDERE LIGHTBOX CÂND DAI CLICK ÎN AFARA CONȚINUTULUI =====
+document.addEventListener('click', function(e) {
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox || lightbox.style.display !== 'flex') return;
+
+  const image = document.querySelector('.lightbox-image');
+  const video = document.querySelector('.lightbox-video');
+  const isInside = image.contains(e.target) || video.contains(e.target);
+  const isButton = e.target.closest('.nav') || e.target.closest('.close');
+
+  if (!isInside && !isButton) {
+    lightbox.style.display = 'none';
+    if (video) {
+      video.pause();
+      video.src = '';
+    }
+  }
+});
+
+// ===== ÎNCHIDERE LIGHTBOX CU X =====
+document.querySelectorAll('.close').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const lightbox = document.getElementById('lightbox');
+    const video = document.querySelector('.lightbox-video');
+    lightbox.style.display = 'none';
+    if (video) {
+      video.pause();
+      video.src = '';
+    }
+  });
 });
 

@@ -17,6 +17,10 @@
       <div class="nav-left">
         <img src="img/logo.png" alt="Transpa Protect" class="logo">
       </div>
+         
+      <!-- Buton mobil -->
+      <button class="menu-toggle" aria-label="Meniu">&#9776;</button>
+      
       <div class="nav-right">
         <ul>
           <li><a href="#acasa">Acasă</a></li>
@@ -231,22 +235,6 @@
   <!-- FOOTER -->
   <footer> ... </footer>
 
-  <script>
-  document.querySelectorAll('.scroll-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = this.getAttribute('href');
-      const element = document.querySelector(target);
-      if (element) {
-        window.scrollTo({
-          top: element.offsetTop - 80,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-  </script>
-
 <script>
 document.querySelectorAll('.scroll-link').forEach(link => {
   link.addEventListener('click', function(e) {
@@ -280,7 +268,13 @@ document.querySelectorAll('.scroll-link').forEach(link => {
 <div id="lightbox" class="lightbox">
   <span class="close">&times;</span>
   <div class="nav prev">&#10094;</div>
+
+  <!-- Imagine -->
   <img class="lightbox-image" src="" alt="">
+
+  <!-- Video -->
+  <video class="lightbox-video" controls playsinline style="display:none; max-width:90%; max-height:80vh;"></video>
+
   <div class="nav next">&#10095;</div>
   <div class="lightbox-caption"></div>
 </div>
